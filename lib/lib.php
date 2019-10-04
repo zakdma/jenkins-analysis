@@ -23,7 +23,7 @@ function getUrlContent($url)
 //        )
 //    );
     if (!empty($curlProxy)) {
-        curl_setopt($ch, CURLOPT_PROXY, $curlProxyUser);
+        curl_setopt($ch, CURLOPT_PROXY, $curlProxy);
         if (!empty($curlProxyUser) || !empty($curlProxyPassword)) {
             $proxyAuth = $curlProxyUser.':'.$curlProxyPassword;
             curl_setopt($ch, CURLOPT_PROXYUSERPWD, $proxyAuth);
