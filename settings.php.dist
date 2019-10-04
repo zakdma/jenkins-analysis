@@ -2,3 +2,7 @@
 
 $jenkinsUser = '';
 $jenkinsPassword = '';
+
+$curlProxy = null;
+$curlProxyUser = null;
+$curlProxyPassword = null;

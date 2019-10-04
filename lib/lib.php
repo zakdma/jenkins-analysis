@@ -2,7 +2,7 @@
 
 function getUrlContent($url)
 {
-    global $jenkinsUser, $jenkinsPassword;
+    global $jenkinsUser, $jenkinsPassword, $curlProxy, $curlProxyUser, $curlProxyPassword;
     $ch = curl_init();
     //curl_setopt($ch, CURLOPT_POST, true);
     curl_setopt($ch, CURLOPT_USERPWD, $jenkinsUser . ":" . $jenkinsPassword);
@@ -22,6 +22,13 @@ function getUrlContent($url)
 //            //'Accept: application/json;charset=UTF-8'
 //        )
 //    );
+    if (!empty($curlProxy)) {
+        curl_setopt($ch, CURLOPT_PROXY, $curlProxyUser);
+        if (!empty($curlProxyUser) || !empty($curlProxyPassword)) {
+            $proxyAuth = $curlProxyUser.':'.$curlProxyPassword;
+            curl_setopt($ch, CURLOPT_PROXYUSERPWD, $proxyAuth);
+        }
+    }
     $responseBody = curl_exec($ch);
     curl_close($ch);
 
