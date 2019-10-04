@@ -1,0 +1,23 @@
+<?php
+
+$tasks = [
+    /**
+     * List of task numbers that need to check
+     * Ex:
+     * $tasks = [
+     *  'MC-12345',
+     *  'MC-12346'
+     * ];
+     */
+];
+
+$builds = [
+    /**
+     * List of hi-level builds
+     * Ex:
+     * $builds = [
+     *  'https://xxxxxxxxxxx/job/All-User-Requested-Tests/12345/',
+     * 'https://xxxxxxxxxxx/job/All-User-Requested-Tests/12346/',
+     * ];
+     */
+];
